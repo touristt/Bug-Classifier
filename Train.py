@@ -14,3 +14,14 @@ for bug in training_data:
 	slope += change_in_slope
 	print(slope)
 
+def Test(bug):
+	check = bug.length / bug.width
+	if check <= slope:
+		print("It's a ladybird")
+	else:
+		print("It's a caterpillar")
+
+Test(Bug(4,5))
+Test(Bug(1,3))
+Test(Bug(4.4,5.7))
+Test(Bug(4,6.2))
