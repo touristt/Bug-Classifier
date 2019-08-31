@@ -23,3 +23,12 @@ while count != len(training_data):
 	else:
 		count += 1
 	i += 1
+
+def Test(bug):
+	inp = np.array([[bug.length, bug.width]])
+	res = W.dot(inp.transpose()) + B
+	res = activation_function(res)
+	if res == 1:
+		print("It's a ladybird")
+	elif res == 0:
+		print("It's a caterpillar")
