@@ -5,3 +5,21 @@ training_data = [{'l': 5, 'w': 4, 'T': 1}, {'l': 3, 'w': 1, 'T': 0}, {'l': 5.7, 
 
 def activation_function(num):
 	return 1 if num >= 0 else 0
+
+count = 0
+i = 0
+while count != len(training_data):
+	if i == len(training_data):
+		i = 0
+	obj = training_data[i]
+	inp = np.array([[obj['l'],obj['w']]])
+	res = W.dot(inp.transpose()) + B
+	res = activation_function(res)
+	if res != obj['T']:
+		E = obj['T'] - res
+		W = W + E*inp
+		B = B + E
+		count = 1
+	else:
+		count += 1
+	i += 1
