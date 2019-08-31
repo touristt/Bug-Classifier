@@ -7,7 +7,7 @@ def activation_function(num):
 	return 1 if num >= 0 else 0
 
 W = np.array([[0 , 0]]) # initial weights
-B = 0 					# inital bias
+B = 0 			# initial bias
 
 count = 0
 i = 0
