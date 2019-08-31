@@ -6,6 +6,9 @@ training_data = [{'l': 5, 'w': 4, 'T': 1}, {'l': 3, 'w': 1, 'T': 0}, {'l': 5.7, 
 def activation_function(num):
 	return 1 if num >= 0 else 0
 
+W = np.array([[0 , 0]]) # initial weights
+B = 0 					# inital bias
+
 count = 0
 i = 0
 while count != len(training_data):
@@ -29,6 +32,14 @@ def Test(bug):
 	res = W.dot(inp.transpose()) + B
 	res = activation_function(res)
 	if res == 1:
-		print("It's a ladybird")
+		print(f"L: {bug.length}, W: {bug.width} It's a ladybird")
 	elif res == 0:
-		print("It's a caterpillar")
+		print(f"L: {bug.length}, W: {bug.width} It's a caterpillar")
+
+Test(Bug(4,5))
+Test(Bug(1,3))
+Test(Bug(3,1))
+Test(Bug(16,5))
+Test(Bug(31,23))
+Test(Bug(4.4,5.7))
+Test(Bug(4,6.2))
