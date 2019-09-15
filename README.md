@@ -1,5 +1,5 @@
 # Bug-Classifier
-Linear classifier to classify bugs as ladybirds or caterpillars :)
+Linear classifier to classify bugs as ladybirds :beetle: or caterpillars :bug: :)
 - Train.py (Linear Classification)
 - Perceptron.py (Single Layer Neural Network with supervised learning)
   - Training Data Length: 1000
