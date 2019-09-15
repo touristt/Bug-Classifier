@@ -13,6 +13,7 @@ count = 0
 i = 0
 iterations = 0
 print("Training Data Length:",len(training_data))
+print("Test Data Length:",len(test_data)) 
 while count != len(training_data):
 	iterations+=1
 	if i == len(training_data):
