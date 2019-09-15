@@ -29,10 +29,20 @@ while count != len(training_data):
 	else:
 		count += 1
 	i += 1
-print("Iterations:",iterations)
-print("Weights:",W)
-print("Bias:",B)
-def Test(bug):
+print("Iterations:",iterations,", Weights:",W,", Bias:",B)
+
+def Test():
+	count = 0
+	for bug in test_data:
+		inp = np.array([[bug['l'], bug['w']]])
+		res = W.dot(inp.transpose()) + B
+		res = activation_function(res)
+		if res == bug['T']:
+			count += 1
+	print("Accuracy: ", count*100/len(test_data), "%")
+
+# Custom Tests:
+def Check(bug):
 	inp = np.array([[bug.length, bug.width]])
 	res = W.dot(inp.transpose()) + B
 	res = activation_function(res)
@@ -40,11 +50,11 @@ def Test(bug):
 		print(f"L: {bug.length}, W: {bug.width} It's a ladybird")
 	elif res == 0:
 		print(f"L: {bug.length}, W: {bug.width} It's a caterpillar")
-
-Test(Bug(4,5))
-Test(Bug(1,3))
-Test(Bug(3,1))
-Test(Bug(16,5))
-Test(Bug(31,23))
-Test(Bug(4.4,5.7))
-Test(Bug(4,6.2))
+Test()
+Check(Bug(4,5))
+Check(Bug(1,3))
+Check(Bug(3,1))
+Check(Bug(16,5))
+Check(Bug(31,23))
+Check(Bug(4.4,5.7))
+Check(Bug(4,6.2))
