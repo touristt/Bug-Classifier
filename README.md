@@ -14,4 +14,8 @@ The Bug Classifier is hosted at https://bugclassifier.herokuapp.com/
 
 Drag the mouse to draw circles, whose x and y coordinates are used as the length and width of a bug and then a request to the API is made to find the type of Bug and then the circles get their colors according to the classification.
 
+&#x1F535; : Ladybird
+
+&#x1F534; : Caterpillar
+
 ![Bug Classifier](https://i.imgur.com/dxFffWe.png)
